@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="15sp"
+    >
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="383dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gender"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:id="@+id/RdGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/genderBoy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="@string/genderBoy"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/genderGirl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/genderGirl"
+                android:textSize="18sp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/ticketType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ticketType"
+            android:textAlignment="viewStart"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:id="@+id/RdGroup_2"
+            android:layout_width="383dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rdAdult"
+                android:layout_width="20dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="@string/adult"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rdChild"
+                android:layout_width="21dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/child"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rdStudent"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/student"
+                android:textSize="18sp" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="383dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="36dp"
+        android:orientation="horizontal"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/number"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <NumberPicker
+            android:id="@+id/numpick"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="379dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="12dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="141dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnPurchase"
+        android:layout_width="144dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="139dp"
+        android:text="@string/purchase"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

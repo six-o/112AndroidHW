@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TicketPurchase</string>
+    <string name="gender">性別</string>
+    <string name="genderBoy">男性</string>
+    <string name="genderGirl">女性</string>
+    <string name="ticketType">票種</string>
+    <string name="adult">成人\n(500元)</string>
+    <string name="child">兒童\n(250元)</string>
+    <string name="student">學生\n(400元)</string>
+    <string name="number">"張數 : "</string>
+    <string name="initNumber">1</string>
+    <string name="purchase">購買</string>
+</resources>
