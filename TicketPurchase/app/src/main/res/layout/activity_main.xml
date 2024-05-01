@@ -115,14 +115,14 @@
             android:textAlignment="center"
             android:textSize="18sp" />
 
-        <NumberPicker
-            android:id="@+id/numpick"
-            android:layout_width="280dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="3"
-            android:gravity="center"
-            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/NumSheets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number|numberSigned"
+            android:text="1" />
 
 
     </LinearLayout>

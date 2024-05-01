@@ -22,7 +22,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 import org.w3c.dom.Text;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, NumberPicker.OnValueChangeListener, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, View.OnClickListener, TextWatcher {
+
+
 
     enum gender { Boy, girl }
     enum identity { Adult, Child, Student }
@@ -48,21 +50,18 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         });
         RdGroup = (RadioGroup) findViewById(R.id.RdGroup);
         RdGroup_2 = (RadioGroup) findViewById(R.id.RdGroup_2);
-        numberPicker = (NumberPicker) findViewById(R.id.numpick);
+        NumSheets = (EditText) findViewById(R.id.NumSheets);
         result = (TextView) findViewById(R.id.result);
         btnPurchase = (Button) findViewById(R.id.btnPurchase);
 
         RdGroup.check(R.id.genderBoy);
         RdGroup_2.check(R.id.rdAdult);
-        numberPicker.setMinValue(1);
-        numberPicker.setMaxValue(100);
-        numberPicker.setValue(1);
-        numberPicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
 
         RdGroup.setOnCheckedChangeListener(this);
         RdGroup_2.setOnCheckedChangeListener(this);
-        numberPicker.setOnValueChangedListener(this);
+        NumSheets.addTextChangedListener(this);
         btnPurchase.setOnClickListener(this);
+
         money = returnMoney(identity) * Number;
         resultString = String.format("%s\n%s\n%d 張\n%d 元", gender, identity, Number, money);
         result.setText(resultString);
@@ -92,12 +91,23 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         resultString = String.format("%s\n%s\n%d 張\n%d 元", gender, identity, Number, money);
         result.setText(resultString);
     }
+
     @Override
-    public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-        Number =  newVal;
-        money = returnMoney(identity) * Number;
-        resultString = String.format("%s\n%s\n%d 張\n%d 元", gender, identity, Number, money);
-        result.setText(resultString);
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+            Number =  Integer.parseInt(NumSheets.getText().toString());
+            money = returnMoney(identity) * Number;
+            resultString = String.format("%s\n%s\n%d 張\n%d 元", gender, identity, Number, money);
+            result.setText(resultString);
     }
 
     public int returnMoney(String profession) {
