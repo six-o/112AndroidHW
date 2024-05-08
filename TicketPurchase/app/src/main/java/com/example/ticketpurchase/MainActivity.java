@@ -68,25 +68,19 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     }
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        switch (checkedId){
-            case R.id.genderBoy:
-                gender = "男性";
-                break;
-            case R.id.genderGirl:
-                gender = "女性";
-                break;
-            case R.id.rdAdult:
-                identity = "成人";
-                money = returnMoney(identity) * Number;
-                break;
-            case R.id.rdChild:
-                identity = "兒童";
-                money = returnMoney(identity) * Number;
-                break;
-            case R.id.rdStudent:
-                identity = "學生";
-                money = returnMoney(identity) * Number;
-                break;
+        if (checkedId == R.id.genderBoy) {
+            gender = "男性";
+        } else if (checkedId == R.id.genderGirl) {
+            gender = "女性";
+        } else if (checkedId == R.id.rdAdult) {
+            identity = "成人";
+            money = returnMoney(identity) * Number;
+        } else if (checkedId == R.id.rdChild) {
+            identity = "兒童";
+            money = returnMoney(identity) * Number;
+        } else if (checkedId == R.id.rdStudent) {
+            identity = "學生";
+            money = returnMoney(identity) * Number;
         }
         resultString = String.format("%s\n%s\n%d 張\n%d 元", gender, identity, Number, money);
         result.setText(resultString);
@@ -104,10 +98,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
     @Override
     public void afterTextChanged(Editable s) {
-            Number =  Integer.parseInt(NumSheets.getText().toString());
-            money = returnMoney(identity) * Number;
-            resultString = String.format("%s\n%s\n%d 張\n%d 元", gender, identity, Number, money);
-            result.setText(resultString);
+        Number =  Integer.parseInt(NumSheets.getText().toString());
+        money = returnMoney(identity) * Number;
+        resultString = String.format("%s\n%s\n%d 張\n%d 元", gender, identity, Number, money);
+        result.setText(resultString);
     }
 
     public int returnMoney(String profession) {
