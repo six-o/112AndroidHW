@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">SPandLV</string>
+    <string name="send">送出</string>
+    <string name="cancel">取消</string>
+    <string name="main_init">主餐 : 請選擇</string>
+    <string name="drink_init">飲料 : 請選擇</string>
+    <string name="attached_init">附餐 : 請選擇</string>
+    <string-array name="choice">
+        <item>主餐</item>
+        <item>飲料</item>
+        <item>附餐</item>
+    </string-array>
+    <string-array name="main">
+        <item>牛肉漢堡</item>
+        <item>豬肉漢堡</item>
+        <item>炸雞漢堡</item>
+        <item>炸魚漢堡</item>
+    </string-array>
+    <string-array name="drink">
+        <item>可樂</item>
+        <item>雪碧</item>
+        <item>冰紅茶</item>
+    </string-array>
+    <string-array name="attached">
+        <item>薯條</item>
+        <item>沙拉</item>
+        <item>玉米濃湯</item>
+        <item>蘋果派</item>
+    </string-array>
+</resources>
